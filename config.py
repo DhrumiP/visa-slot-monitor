@@ -16,9 +16,16 @@ load_dotenv()  # reads .env file automatically
 # ── URLs to watch ──────────────────────────────────────────────────────────────
 # "interval" = seconds between checks of THIS url (independent of loop tick)
 URLS = [
+    # ── CheckVisaSlots — H1B Regular ───────────────────────────────────────────
     {
         "label": "CheckVisaSlots — H1B Regular",
         "url": "https://checkvisaslots.com/latest-us-visa-availability/h-1b-regular/",
+        "interval": 300,
+    },
+    # ── CheckVisaSlots — H4 Regular ────────────────────────────────────────────
+    {
+        "label": "CheckVisaSlots — H4 Regular",
+        "url": "https://checkvisaslots.com/latest-us-visa-availability/h-4-regular/",
         "interval": 300,
     },
     # ── VisaGrader — H1B Biometrics (every 60s) ────────────────────────────────
@@ -73,6 +80,58 @@ URLS = [
         "url": "https://visagrader.com/us-visa-time-slots-availability/india-ind/mumbai-P139/h1b-visa-H1B#Interview",
         "interval": 60,
     },
+    # ── VisaGrader — H4 Biometrics (every 60s) ─────────────────────────────────
+    {
+        "label": "VisaGrader — New Delhi H4 Biometrics",
+        "url": "https://visagrader.com/us-visa-time-slots-availability/india-ind/new-delhi-P147/h4-visa-H4#Biometrics",
+        "interval": 60,
+    },
+    {
+        "label": "VisaGrader — Chennai H4 Biometrics",
+        "url": "https://visagrader.com/us-visa-time-slots-availability/india-ind/chennai-P48/h4-visa-H4#Biometrics",
+        "interval": 60,
+    },
+    {
+        "label": "VisaGrader — Hyderabad H4 Biometrics",
+        "url": "https://visagrader.com/us-visa-time-slots-availability/india-ind/hyderabad-P85/h4-visa-H4#Biometrics",
+        "interval": 60,
+    },
+    {
+        "label": "VisaGrader — Kolkata H4 Biometrics",
+        "url": "https://visagrader.com/us-visa-time-slots-availability/india-ind/kolkata-P100/h4-visa-H4#Biometrics",
+        "interval": 60,
+    },
+    {
+        "label": "VisaGrader — Mumbai H4 Biometrics",
+        "url": "https://visagrader.com/us-visa-time-slots-availability/india-ind/mumbai-P139/h4-visa-H4#Biometrics",
+        "interval": 60,
+    },
+    # ── VisaGrader — H4 Interview (every 60s) ──────────────────────────────────
+    {
+        "label": "VisaGrader — New Delhi H4 Interview",
+        "url": "https://visagrader.com/us-visa-time-slots-availability/india-ind/new-delhi-P147/h4-visa-H4#Interview",
+        "interval": 60,
+    },
+    {
+        "label": "VisaGrader — Chennai H4 Interview",
+        "url": "https://visagrader.com/us-visa-time-slots-availability/india-ind/chennai-P48/h4-visa-H4#Interview",
+        "interval": 60,
+    },
+    {
+        "label": "VisaGrader — Hyderabad H4 Interview",
+        "url": "https://visagrader.com/us-visa-time-slots-availability/india-ind/hyderabad-P85/h4-visa-H4#Interview",
+        "interval": 60,
+    },
+    {
+        "label": "VisaGrader — Kolkata H4 Interview",
+        "url": "https://visagrader.com/us-visa-time-slots-availability/india-ind/kolkata-P100/h4-visa-H4#Interview",
+        "interval": 60,
+    },
+    {
+        "label": "VisaGrader — Mumbai H4 Interview",
+        "url": "https://visagrader.com/us-visa-time-slots-availability/india-ind/mumbai-P139/h4-visa-H4#Interview",
+        "interval": 60,
+    },
 ]
 
 # ── Loop tick ──────────────────────────────────────────────────────────────────
@@ -109,4 +168,4 @@ STATE_FILE = "state.json"         # Stores page hashes between runs
 LOG_FILE   = "monitor.log"        # Log file
 DETECTION_LOG = "detections.jsonl"  # Every confirmed change, one JSON per line.
                                     # Committed immediately so a tailing agent
-                                    # sees detections within ~1 minute.
+                                    # sees detections within ~1 minute.   
